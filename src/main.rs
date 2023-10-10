@@ -1,11 +1,13 @@
-use std::io::*;
+use learning::client;
 use rand::prelude::*;
+use std::io::*;
 
 fn main() {
     // average();
     // fahrenheit_conversor();
     // todo_list();
-    guess_the_number();
+    // guess_the_number();
+    oop(); 
 }
 
 fn average() {
@@ -66,13 +68,25 @@ fn guess_the_number() {
     println!("Insira um número para adivinhar: ");
     let mut input: String = String::new();
     stdin().read_line(&mut input).expect("Falha ao ler a linha");
-    
+
     let random_number: isize = rand::thread_rng().gen_range(1..10);
 
     let ans: isize = input.trim().parse().unwrap();
     if ans == random_number {
         println!("Parabéns! Você acertou o número!");
     } else {
-        println!("Você errou o número! O número correto era: {:?}", random_number);
+        println!(
+            "Você errou o número! O número correto era: {:?}",
+            random_number
+        );
     }
+}
+
+fn oop() {
+    let client = client::Client::new(
+        String::from("John Doe"),
+        String::from("johndoe@email.com"),
+        20,
+    );
+    client.print();
 }
