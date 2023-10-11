@@ -1,4 +1,5 @@
-use learning::client;
+use learning::client::*;
+use learning::sensor::*;
 use rand::prelude::*;
 use std::io::*;
 
@@ -7,7 +8,8 @@ fn main() {
     // fahrenheit_conversor();
     // todo_list();
     // guess_the_number();
-    oop(); 
+    // oop(); 
+    run();
 }
 
 fn average() {
@@ -83,7 +85,7 @@ fn guess_the_number() {
 }
 
 fn oop() {
-    let client = client::Client::new(
+    let client = Client::new(
         String::from("John Doe"),
         String::from("johndoe@email.com"),
         20,
