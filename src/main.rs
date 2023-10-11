@@ -4,12 +4,10 @@ use rand::prelude::*;
 use std::io::*;
 
 fn main() {
-    // average();
-    // fahrenheit_conversor();
-    // todo_list();
-    // guess_the_number();
-    // oop(); 
-    run();
+    let mut f = fibonacci();
+    for i in 0..10 {
+        println!("{}: {}", i, f())
+    }
 }
 
 fn average() {
@@ -89,6 +87,17 @@ fn oop() {
         String::from("John Doe"),
         String::from("johndoe@email.com"),
         20,
+        Role::Admin(String::from("Administrador")),
     );
     client.print();
+}
+
+fn fibonacci() -> impl FnMut() -> usize {
+    let mut a: usize = 0;
+    let mut b: usize = 1;
+    return move || {
+        a = b;
+        b = a + b;
+        return b - a;
+    };
 }
