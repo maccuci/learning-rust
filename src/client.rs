@@ -4,17 +4,22 @@ pub struct Client {
     pub name: String,
     pub email: String,
     pub age: u8,
-    pub role: Role
+    pub role: Role,
 }
 
 pub enum Role {
     Admin(String),
-    User(String)
+    User(String),
 }
 
 impl Client {
     pub fn new(name: String, email: String, age: u8, role: Role) -> Self {
-        Self { name, email, age, role }
+        Self {
+            name,
+            email,
+            age,
+            role,
+        }
     }
 
     pub fn print(&self) {

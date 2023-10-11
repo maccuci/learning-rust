@@ -1,9 +1,12 @@
-use std::{time::{Duration, Instant}, thread};
+use std::{
+    thread,
+    time::{Duration, Instant},
+};
 
 use rand::Rng;
 
 pub fn run() {
-    let sensor_count = 5;
+    let sensor_count: u32 = 5;
     let interval = Duration::from_secs(1);
     let simulation = Duration::from_secs(10);
 
@@ -14,8 +17,13 @@ pub fn run() {
         let timestamp = Instant::now();
 
         for sensor_id in 0..sensor_count {
-            let value = simulate_data(sensor_id);
-            println!("Sensor {} - Valor {} - Tempo: {:?}", sensor_id, value, timestamp.elapsed());
+            let value: f64 = simulate_data(sensor_id);
+            println!(
+                "Sensor {} - Valor {} - Tempo: {:?}",
+                sensor_id,
+                value,
+                timestamp.elapsed()
+            );
         }
 
         thread::sleep(interval);
