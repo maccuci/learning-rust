@@ -15,4 +15,4 @@ Rust is known for its emphasis on memory safety. The language provides a unique 
 ## References
 
 - [Rust](https://www.rust-lang.org/)
-- [Rust Doc](https://doc.rust-lang.org/stable/reference/)
+- [Rust Reference](https://doc.rust-lang.org/stable/reference/)
